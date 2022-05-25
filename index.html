@@ -9,9 +9,9 @@
 </head>
 <body>
     <div style="display:flex;align-items:center;justify-content:center;">
-        <div id="boxes">
+        <div id="boxesMain">
         </div>
-        <form id="form" action="">
+        <form id="formMain" action="">
             Enter your name:<br/>
             <input type="text" name="name"/><br/>
             Enter your phone:<br/>
@@ -22,8 +22,8 @@
     <script>
         initBoxes({
             selectors:{
-                boxes:"#boxes",
-                form:"#form"
+                boxes:"#boxesMain",
+                form:"#formMain"
             },
             texts:{
                 instructions: "Click on any box and try to find one with a 50% discount 👇",
