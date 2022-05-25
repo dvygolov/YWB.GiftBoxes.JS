@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Yellow Web Boxes Script</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ywbboxes.js"></script>
+</head>
+<body>
+    <div style="display:flex;align-items:center;justify-content:center;">
+        <div id="boxes">
+        </div>
+        <form id="form" action="">
+            Enter your name:<br/>
+            <input type="text" name="name"/><br/>
+            Enter your phone:<br/>
+            <input type="tel" name="phone"/><br/>
+            <button type="submit">Press me!</button>
+        </form>
+    </div>
+    <script>
+        initBoxes({
+            selectors:{
+                boxes:"#boxes",
+                form:"#form"
+            },
+            texts:{
+                instructions: "Click on any box and try to find one with a 50% discount 👇",
+                lastTry:["Warning!","This is your LAST TRY."],
+                congratulations:["Congratulations!","You can order the product with a 50% discount!"]
+            },
+            product:{
+                price: 1990,
+                currency:"$"
+            }
+        });
+    </script>
+    
+</body>
+</html>

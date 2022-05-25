@@ -8,16 +8,16 @@ function initBoxes(params){
         bContainer.append('<div id="boxes" class="boxes boxesfirsttry"></div>');
         var boxes=$('#boxes');
         for (var i = 0; i < 9; i++) {
-            boxes.append('<div id="'+(i+1)+'"> <img src="img/box_c.png" class="try"> <img src="img/download.png" class="opentry"> <span class="boxtext">50%</span> </div>');
+            boxes.append('<div id="'+(i+1)+'"> <img src="bimg/closed.png" class="try"> <img src="bimg/open.png" class="opentry"> <span class="boxtext">50%</span> </div>');
         }
 
         bContainer.append('<div class="sweet-overlay" style="opacity: 1.03; display: none;" tabindex="-1"></div>');
-        bContainer.append('<div class="sweet-alert animated bounceIn" id="modal02"> <div class="sa-icon sa-success" id="success02"> <span class="sa-line sa-tip" id="successtip02"></span> <span class="sa-line sa-long" id="successlong02"></span> <div class="sa-placeholder"></div> <div class="sa-fix"></div> </div> <p id="cnt">'+params.texts.lastTry+'<br>'+params.texts.lastTry2+'</p> <div class="sa-button-container"> <div class="sa-confirm-button-container"> <button id="update" style="display: inline-block; box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset; background-color: #FFA400;"> OK </button> <div class="la-ball-fall"></div> </div> </div> </div>');
+        bContainer.append('<div class="sweet-alert animated bounceIn" id="modal02"> <div class="sa-icon sa-success" id="success02"> <span class="sa-line sa-tip" id="successtip02"></span> <span class="sa-line sa-long" id="successlong02"></span> <div class="sa-placeholder"></div> <div class="sa-fix"></div> </div> <p id="cnt">'+params.texts.lastTry[0]+'<br>'+params.texts.lastTry[1]+'</p> <div class="sa-button-container"> <div class="sa-confirm-button-container"> <button id="update" style="display: inline-block; box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset; background-color: #FFA400;"> OK </button> <div class="la-ball-fall"></div> </div> </div> </div>');
 
 
-        scroll.append('<div class="spin-result-wrapper"> <div class="pop-up-window"> <div class="close-popup"></div> <span class="pop-up-heading" style="margin-bottom: 20px!important; display: block;">'+params.texts.congrats+'</span> <p class="pop-up-text" style="text-align: center!important;">'+params.texts.congrats2+'<span class="price_land_s1">'+params.product.price+'</span> <span class="price_land_curr">'+params.product.currency+'</span></p><br /> <button class="pop-up-button">Ok</button> </div> </div>');
+        scroll.append('<div class="spin-result-wrapper"> <div class="pop-up-window"> <div class="close-popup"></div> <span class="pop-up-heading" style="margin-bottom: 20px!important; display: block;">'+params.texts.congratulations[0]+'</span> <p class="pop-up-text" style="text-align: center!important;">'+params.texts.congratulations[1]+' <span class="price_land_s1">'+params.product.price+'</span> <span class="price_land_curr">'+params.product.currency+'</span></p><br /> <button class="pop-up-button">Ok</button> </div> </div>');
 
-        $(formSelector).wrap('<div class="gifts_order_block"></div>');
+        $(params.selectors.form).wrap('<div class="gifts_order_block"></div>');
 
         $(".boxes > div").click(function(){
             if ($(this).parent().hasClass("boxesfirsttry")){
