@@ -55,10 +55,27 @@ function initBoxes(params){
         $(".pop-up-button, .close-popup").click(function(){
             $(".spin-result-wrapper").hide();
         });
-        $("a, .menu__item").bind("click.smoothscroll",function(e){
+
+        /*$("a, .menu__item").bind("click.smoothscroll",function(e){
             e.preventDefault();
             var o=$("#scroll-to-boxes").offset().top - 80;
             $("html, body").stop().animate({scrollTop:o},500,"swing");
-        });
+        });*/
+
+        const anchors = document.querySelectorAll('a');
+
+        for (let anchor of anchors) {
+          if (!anchor.getAttribute('href')) continue;
+          if (anchor.getAttribute('href')!=params.selectors.form) continue;
+                
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+               
+            document.getElementById(params.selectors.boxes.substring(1)).scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          });
+        }
     });
 }
