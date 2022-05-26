@@ -7,8 +7,9 @@ function initBoxes(params){
         bContainer.append('<div class="instructions">'+params.texts.instructions+'<table> <tbody> <tr> <td> <span class="bounce">↓</span> </td> <td> </td> <td><span class="bounce">↓</span> </td> </tr> </tbody> </table> </div>');
         bContainer.append('<div id="boxes" class="boxes boxesfirsttry"></div>');
         var boxes=$('#boxes');
+        var boxStyle=!params.style?1:params.style;
         for (var i = 0; i < 9; i++) {
-            boxes.append('<div id="'+(i+1)+'"> <img src="bimg/closed.png" class="try"> <img src="bimg/open.png" class="opentry"> <span class="boxtext">50%</span> </div>');
+            boxes.append('<div id="'+(i+1)+'"><img src="bimg/closed'+boxStyle+'.png" class="try"><img src="bimg/open'+boxStyle+'.png" class="opentry"><span class="boxtext">50%</span></div>');
         }
 
         bContainer.append('<div class="sweet-overlay" style="opacity: 1.03; display: none;" tabindex="-1"></div>');
