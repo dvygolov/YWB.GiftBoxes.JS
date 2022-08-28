@@ -57,12 +57,6 @@ function initBoxes(params){
             $(".spin-result-wrapper").hide();
         });
 
-        /*$("a, .menu__item").bind("click.smoothscroll",function(e){
-            e.preventDefault();
-            var o=$("#scroll-to-boxes").offset().top - 80;
-            $("html, body").stop().animate({scrollTop:o},500,"swing");
-        });*/
-
         const anchors = document.querySelectorAll('a');
 
         for (let anchor of anchors) {
